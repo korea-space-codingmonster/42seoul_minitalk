@@ -1,1 +1,1 @@
-# 42seoul_pipex
+# 42seoul_minitalk
