@@ -6,7 +6,7 @@
 /*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 13:37:40 by napark            #+#    #+#             */
-/*   Updated: 2021/06/23 15:33:03 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/23 16:31:34 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,44 @@ char    *ft_cutobit(char str)//비트로 보내기 위한 비트 전환
     return (ret);
 }
 
+void ft_send_term(int pid)
+{
+    int i;
+
+    i = 0;
+    while (i < 7)
+    {
+        kill(pid, SIGUSR1);
+        i++;
+        usleep(50);
+    }
+}
+
 static void     ft_send_signal(int pid, char *string)
 {
     int i;
+    int j;
     char *tmp;
     
     i = 0;
+    j = 0;
     while (string[i])
     {
         tmp = ft_cutobit(string[i]);//보내기 위해 잘라줘
+        j = 0;
+        while (tmp[j])
+        {
+            if (tmp[j] == '0')
+                kill(pid, SIGUSR1);
+            else
+                kill(pid, SIGUSR2);
+            j++;
+            usleep(50);
+        }
+        free(tmp);//하나한 보내면서 다보내면 해제
+        i++;
     }
+    ft_send_term(pid);
 }
 
 int     main(int argc, char *argv[])

@@ -37,3 +37,7 @@ c언어에서 문자 전송은 아스키 코드로 표현되고 그로인해 문
 
 ###도움 정보 사이트
 https://jhnyang.tistory.com/143
+https://badayak.com/4449
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=shheroes&logNo=220410775078
+https://blog.naver.com/gumpofmay/80209588176
+https://reakwon.tistory.com/46?category=300674
