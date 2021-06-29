@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 16:26:39 by napark            #+#    #+#             */
-/*   Updated: 2021/06/23 16:27:06 by napark           ###   ########.fr       */
+/*   Created: 2021/06/24 11:46:33 by napark            #+#    #+#             */
+/*   Updated: 2021/06/24 11:46:48 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-char	*ft_itoa(int n)
+int	ft_atoi(const char *str)
 {
-	char	*dst;
-	int		i;
+	size_t	i;
+	int		num;
+	int		negative;
 
-	i = nlen(n);
-	dst = (char *)malloc((i + 1) * sizeof(char));
-	if (dst == 0)
-		return (0);
-	dst[i--] = 0;
-	if (n < 0)
+	i = 0;
+	num = 0;
+	negative = 1;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		dst[0] = 45;
-		dst[i] = (n % 10) * (-1) + 48;
-		n = (n / 10) * (-1);
-		if (n == 0)
-			return (dst);
-		i--;
+		if (str[i] == '-')
+			negative = -1;
+		i++;
 	}
-	while ((n / 10) > 0)
+	while (ft_isdigit(str[i]))
 	{
-		dst[i] = (n % 10) + 48;
-		n /= 10;
-		i--;
+		num = (num * 10) + (int)str[i] - 48;
+		i++;
 	}
-	dst[i] = n + 48;
-	return (dst);
+	return (num * negative);
 }

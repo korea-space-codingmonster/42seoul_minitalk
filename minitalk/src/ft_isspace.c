@@ -5,26 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 14:43:42 by napark            #+#    #+#             */
-/*   Updated: 2021/06/23 14:54:48 by napark           ###   ########.fr       */
+/*   Created: 2021/06/24 11:47:04 by napark            #+#    #+#             */
+/*   Updated: 2021/06/24 11:50:12 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int     ft_isspace(int c)
+int	ft_isspace(int c)
 {
-    if (c == 32)
-        return (1);
-    if (c == 9)
-        return (1);
-    if (c == 10)
-        return (1);
-    if (c == 11)
-        return (1);
-    if (c == 12)
-        return (1);
-    if (c == 13)
-        return (1);
-    return (0);
+	if (c == 32)
+		return (1);
+	if (c == 9)
+		return (1);
+	if (c == 10)
+		return (1);
+	if (c == 11)
+		return (1);
+	if (c == 12)
+		return (1);
+	if (c == 13)
+		return (1);
+	return (0);
 }
