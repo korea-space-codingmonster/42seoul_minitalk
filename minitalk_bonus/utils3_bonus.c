@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   utils3_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 11:41:11 by napark            #+#    #+#             */
-/*   Updated: 2021/06/24 11:41:27 by napark           ###   ########.fr       */
+/*   Created: 2021/06/29 18:15:13 by napark            #+#    #+#             */
+/*   Updated: 2021/06/29 18:15:15 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_end(int sign)
 {
-	write(fd, &c, 1);
+	if (sign == SIGUSR1)
+		write(1, "Message received\n", 17);
+	exit (0);
 }

@@ -1,16 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 11:46:33 by napark            #+#    #+#             */
-/*   Updated: 2021/06/24 11:46:48 by napark           ###   ########.fr       */
+/*   Created: 2021/06/30 12:32:38 by napark            #+#    #+#             */
+/*   Updated: 2021/06/30 12:32:40 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+static int	ft_isspace(int c)
+{
+	if (c == 32)
+		return (1);
+	if (c == 9)
+		return (1);
+	if (c == 10)
+		return (1);
+	if (c == 11)
+		return (1);
+	if (c == 12)
+		return (1);
+	if (c == 13)
+		return (1);
+	return (0);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -35,4 +59,33 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (num * negative);
+}
+
+int	ft_check_argv(char *str)
+{
+	int	i;
+	int	num;
+
+	i = 0;
+	num = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			return (-1);
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		num *= 10;
+		num += str[i] - 48;
+		i++;
+		if (str[i] != 0)
+		{
+			if ((num == 214748364 && str[i] - 48 > 7) || num > 214748364)
+				return (-1);
+		}
+	}
+	return (1);
 }
