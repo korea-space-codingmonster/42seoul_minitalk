@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_server.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: napark <napark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:13:19 by napark            #+#    #+#             */
-/*   Updated: 2021/06/29 18:13:24 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/30 15:00:00 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
 
-int	ft_count_byte(char kara)
+int		ft_count_byte(char kara)
 {
 	int	count;
 
@@ -56,7 +56,7 @@ void	ft_notify(char *string, char carattere)
 	static int	pid_cl;
 
 	if (carattere == 0)
-	{	
+	{
 		if (counter == 1)
 		{
 			counter = 0;
@@ -104,7 +104,7 @@ void	ft_count(int sign)
 	}
 }
 
-int	main(void)
+int		main(void)
 {
 	int		pid;
 	char	*piddino;

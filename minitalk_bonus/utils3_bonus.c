@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: napark <napark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:15:13 by napark            #+#    #+#             */
-/*   Updated: 2021/06/29 18:15:15 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/30 15:06:06 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	ft_end(int sign)
 {
 	if (sign == SIGUSR1)
 		write(1, "Message received\n", 17);
-	exit (0);
+	exit(0);
 }

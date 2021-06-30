@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: napark <napark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:14:23 by napark            #+#    #+#             */
-/*   Updated: 2021/06/29 18:14:27 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/30 15:04:51 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
 
-void	ft_putchar_fd_mod(char *c, int fd, int byte)
+void				ft_putchar_fd_mod(char *c, int fd, int byte)
 {
 	write(fd, c, byte);
 }
 
-static int	nlen(int n)
+static int			nlen(int n)
 {
 	if (n < 0)
 	{
@@ -31,7 +31,7 @@ static int	nlen(int n)
 	return (nlen(n / 10) + 1);
 }
 
-char	*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	char	*dst;
 	int		i;
@@ -60,7 +60,7 @@ char	*ft_itoa(int n)
 	return (dst);
 }
 
-void	ft_putstr_fd(char *s, int fd)
+void				ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
@@ -75,7 +75,7 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
-int	ft_check_argv(char *str)
+int					ft_check_argv(char *str)
 {
 	int	i;
 	int	num;

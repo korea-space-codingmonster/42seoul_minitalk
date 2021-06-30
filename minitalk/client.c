@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: napark <napark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 12:29:49 by napark            #+#    #+#             */
-/*   Updated: 2021/06/30 12:30:28 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/30 14:54:54 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_send_signal(int pid, char *string)
 	ft_send_term(pid);
 }
 
-int	main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	int					pid;
 	int					i;
@@ -87,7 +87,7 @@ int	main(int argc, char *argv[])
 		exit(0);
 	i = 0;
 	if (ft_check_argv(argv[1]) < 0)
-		exit (0);
+		exit(0);
 	pid = ft_atoi(argv[1]);
 	string = argv[2];
 	ft_send_signal(pid, string);

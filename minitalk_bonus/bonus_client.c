@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_client.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: napark <napark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 17:06:58 by napark            #+#    #+#             */
-/*   Updated: 2021/06/29 18:12:22 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/30 14:59:24 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
 
-char	*ft_ctobit(char carattere)
+char		*ft_ctobit(char carattere)
 {
 	int		i;
 	char	*ret;
@@ -38,7 +38,7 @@ char	*ft_ctobit(char carattere)
 	return (ret);
 }
 
-void	ft_send_term(int pid)
+void		ft_send_term(int pid)
 {
 	int	i;
 
@@ -51,7 +51,7 @@ void	ft_send_term(int pid)
 	}
 }
 
-char	*ft_ctobit_pluse(char cara)
+char		*ft_ctobit_pluse(char cara)
 {
 	char	*string;
 
@@ -61,7 +61,7 @@ char	*ft_ctobit_pluse(char cara)
 	return (string);
 }
 
-void	ft_send_signal(int pid, char *string)
+void		ft_send_signal(int pid, char *string)
 {
 	int		i;
 	int		j;
@@ -89,21 +89,21 @@ void	ft_send_signal(int pid, char *string)
 	}
 }
 
-int	main(int argc, char *argv[])
+int			main(int argc, char *argv[])
 {
 	int		pid;
 	char	*string;
 	char	*temp;
 
 	if (argc != 3)
-		exit (0);
+		exit(0);
 	if (ft_check_argv(argv[1]) < 0)
-		exit (0);
+		exit(0);
 	pid = ft_atoi(argv[1]);
 	string = argv[2];
 	temp = ft_itoa(getpid());
 	if (temp == 0)
-		exit (0);
+		exit(0);
 	ft_send_signal(pid, "\1");
 	ft_send_signal(pid, temp);
 	ft_send_term(pid);

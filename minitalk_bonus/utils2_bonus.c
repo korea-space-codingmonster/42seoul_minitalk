@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils2_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: napark <napark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:14:51 by napark            #+#    #+#             */
-/*   Updated: 2021/06/29 18:14:53 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/30 15:05:41 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
 
-char	*ft_create_string(char carattere, char *string)
+char			*ft_create_string(char carattere, char *string)
 {
 	char	*temp;
 	char	*temp2;
@@ -34,21 +34,21 @@ char	*ft_create_string(char carattere, char *string)
 		temp2 = string;
 		string = ft_strjoin(string, temp);
 		if (string == 0)
-			exit (0);
+			exit(0);
 		free(temp2);
 	}
 	free(temp);
 	return (string);
 }
 
-int	ft_isdigit(int c)
+int				ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
 
-int	ft_isspace(int c)
+int				ft_isspace(int c)
 {
 	if (c == 32)
 		return (1);
@@ -65,7 +65,7 @@ int	ft_isspace(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
 	size_t	i;
 	int		num;
@@ -90,7 +90,7 @@ int	ft_atoi(const char *str)
 	return (num * negative);
 }
 
-void	ft_string_complement(char *string)
+void			ft_string_complement(char *string)
 {
 	int	i;
 	int	flag;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: napark <napark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 18:15:33 by napark            #+#    #+#             */
-/*   Updated: 2021/06/29 18:15:35 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/30 15:00:32 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <stdio.h>
 # include <signal.h>
 # include <stdlib.h>
-
-/* utils.c */
 
 char	*ft_itoa(int n);
 void	ft_putstr_fd(char *s, int fd);
@@ -31,8 +29,6 @@ int		ft_check_argv(char *str);
 int		ft_isspace(int c);
 int		ft_isdigit(int c);
 void	ft_end(int sign);
-
-/* stringhe */
 
 void	*ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: napark <napark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 12:32:38 by napark            #+#    #+#             */
-/*   Updated: 2021/06/30 12:32:40 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/30 14:56:19 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	ft_isdigit(int c)
+int			ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
@@ -36,7 +36,7 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	size_t	i;
 	int		num;
@@ -61,7 +61,7 @@ int	ft_atoi(const char *str)
 	return (num * negative);
 }
 
-int	ft_check_argv(char *str)
+int			ft_check_argv(char *str)
 {
 	int	i;
 	int	num;

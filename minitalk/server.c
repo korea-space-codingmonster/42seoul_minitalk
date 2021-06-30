@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: napark <napark@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: napark <napark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 12:31:04 by napark            #+#    #+#             */
-/*   Updated: 2021/06/30 12:31:06 by napark           ###   ########.fr       */
+/*   Updated: 2021/06/30 14:53:59 by napark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-char	*ft_create_string(char carattere, char *string)
+char		*ft_create_string(char carattere, char *string)
 {
 	char	*temp;
 	char	*temp2;
@@ -34,14 +34,14 @@ char	*ft_create_string(char carattere, char *string)
 		temp2 = string;
 		string = ft_strjoin(string, temp);
 		if (string == 0)
-			exit (0);
+			exit(0);
 		free(temp2);
 	}
 	free(temp);
 	return (string);
 }
 
-void	ft_count(int sign)
+void		ft_count(int sign)
 {
 	static int	cont;
 	static int	carattere;
@@ -70,7 +70,7 @@ void	ft_count(int sign)
 	}
 }
 
-int	main(void)
+int			main(void)
 {
 	int		pid;
 	char	*piddino;
